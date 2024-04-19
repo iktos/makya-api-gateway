@@ -1,0 +1,15 @@
+# Copyright (C) Iktos - All Rights Reserved
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+
+autorizedServices:
+  - id: sa_score
+    url: http://sa-score-api:5555/score
+  # Endpoints defined here accept everything put after the initial path
+  # (useful for versionned APIs, such as http://adme.apis.dc.corp.customer.com/score/v1, http://adme.apis.dc.corp.customer.com/score/v2, ...)
+  # - id: dev_john
+  #   url: http://dev.apis.dc.corp.customer.com:6000/score
+  # - id: uat
+  #   url: http://staging.apis.dc.corp.customer.com/score
+  # - id: adme
+  #   url: http://adme.apis.dc.corp.customer.com/score

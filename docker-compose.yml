@@ -1,0 +1,36 @@
+# Copyright (C) Iktos - All Rights Reserved
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+
+name: "makya-api-gateway"
+services:
+  gateway-client:
+    image: iktos/makya-api-gateway-client:2.4.0
+    restart: always
+    user: root
+    volumes:
+      # To make the ACL file editable from the host machine
+      # This line can be removed (along with the ACL_FILE variable below) if ACLs are not used
+      - ./acl.yaml:/data/acl.yaml
+    environment:
+# The values of these variables are defined in the .env file
+      - LOG_LEVEL
+      - LOG_OUTPUT_TYPE
+      - SERVER_URL
+      - GATEWAY_NAME
+      - AUTH_TOKEN
+      - ACL_FILE
+      - API_TIMEOUT_SEC
+# These variables can be set to fix connectivity issues
+#      - USE_TLS
+#      - ALLOW_INSECURE_TLS
+#      - HTTP_PROXY
+#      - HTTPS_PROXY
+
+  sa-score-api:
+    image: iktos/makya-api-sa-score:2
+    restart: always
+    expose:
+      - 5555
+    ports:
+      - "5555:5555"
