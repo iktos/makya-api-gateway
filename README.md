@@ -6,7 +6,8 @@
 2. Set the environment value as need (Contact Iktos to get the Authentication Token and URL)
 3. Edit the `acl.yaml` to register your APIs. A sample API is provided as an example (see note below)
 4. (Optional) If you don't wish to use ACL files, edit the docker-compose file to remove the mounted volume
-5. Run the API Gateway with the command `docker compose up`
+5. Run the API Gateway with the command `docker compose --compatibility up -d`
+6. Follow the logs with `docker compose logs --follow`
 
 
 ## Example API
